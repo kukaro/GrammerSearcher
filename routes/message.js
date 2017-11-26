@@ -23,7 +23,7 @@ router.post('/', function (req, res, next) {
     };
 
     var task2 = function (callback) {
-        db.put(userMessage.user_key, function (err, value) {
+        db.get(userMessage.user_key, function (err, value) {
             console.log('task2');
             if (err) {
                 console.log(err);
