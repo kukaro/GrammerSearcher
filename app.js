@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var keyboard = require('./routes/keyboard');
 var message = require('./routes/message');
+var ldt = require('./routes/ldt');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/keyboard',keyboard);
 app.use('/message', message);
+app.use('/ldt', ldt);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
