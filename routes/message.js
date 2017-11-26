@@ -12,7 +12,7 @@ router.post('/', function (req, res, next) {
     var userMessage = userMessage;
     console.log(userMessage);
 
-    const task1 = function (callback) {
+    var task1 = function (callback) {
         db.put(userMessage.user_key, userMessage.content, function (err) {
             if (err) {
                 console.log(err);
@@ -21,7 +21,7 @@ router.post('/', function (req, res, next) {
         });
     };
 
-    const task2 = function (callback) {
+    var task2 = function (callback) {
         db.put(userMessage.user_key, function (err, value) {
             if (err) {
                 console.log(err);
@@ -31,7 +31,7 @@ router.post('/', function (req, res, next) {
         });
     };
 
-    const task3 = function (callback) {
+    var task3 = function (callback) {
         var json = {
             'message': {
                 'text': "아직 준비중입니다.\n" +
@@ -42,7 +42,7 @@ router.post('/', function (req, res, next) {
         callback(null);
     };
 
-    const tasks = [task1, task2, task3];
+    var tasks = [task1, task2, task3];
 
     async.series(tasks, function (err, results) {
         console.log(results);
