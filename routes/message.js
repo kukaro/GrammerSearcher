@@ -13,6 +13,7 @@ router.post('/', function (req, res, next) {
     console.log(userMessage);
 
     var task1 = function (callback) {
+        console.log('task1');
         db.put(userMessage.user_key, userMessage.content, function (err) {
             if (err) {
                 console.log(err);
@@ -23,6 +24,7 @@ router.post('/', function (req, res, next) {
 
     var task2 = function (callback) {
         db.put(userMessage.user_key, function (err, value) {
+            console.log('task2');
             if (err) {
                 console.log(err);
             }
@@ -32,6 +34,7 @@ router.post('/', function (req, res, next) {
     };
 
     var task3 = function (callback) {
+        console.log('task3');
         var json = {
             'message': {
                 'text': "아직 준비중입니다.\n" +
