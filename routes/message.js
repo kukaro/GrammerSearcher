@@ -18,7 +18,6 @@ router.post('/', function (req, res, next) {
             if (err) {
                 console.log(err);
             }
-            callback(null);
         });
         callback(null);
     };
@@ -30,7 +29,6 @@ router.post('/', function (req, res, next) {
                 console.log(err);
             }
             console.log(userMessage.user_key, value);
-            callback(null);
         });
         callback(null);
     };
