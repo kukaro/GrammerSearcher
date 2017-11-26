@@ -18,8 +18,8 @@ router.get('/', function (req, res, next) {
             if (err) {
                 console.log(err);
             }
+            callback(null);
         });
-        callback(null);
     };
 
     const task2 = function (callback) {
@@ -28,8 +28,8 @@ router.get('/', function (req, res, next) {
                 console.log(err);
             }
             console.log(req.body.user_key, value);
+            callback(null);
         });
-        callback(null);
     };
 
     const task3 = function (callback) {
