@@ -39,7 +39,9 @@ router.get('/', function (req, res, next) {
 
     const tasks = [task1, task2, task3];
 
-    async.series(tasks);
+    async.series(tasks,function (err, results) {
+        console.log(results);
+    });
 });
 
 module.exports = router;
