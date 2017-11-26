@@ -19,6 +19,7 @@ router.post('/', function (req, res, next) {
                 console.log(err);
             }
             callback(null);
+            return;
         });
     };
 
@@ -30,6 +31,7 @@ router.post('/', function (req, res, next) {
             }
             console.log(userMessage.user_key, value);
             callback(null);
+            return;
         });
     };
 
@@ -43,6 +45,7 @@ router.post('/', function (req, res, next) {
         };
         res.send(json);
         callback(null);
+        return;
     };
 
     var tasks = [task1, task2, task3];
