@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
     var json = {'type': 'text'};
     console.log('keyboard', req.body);
 
-    const task1 = function (callback) {
+    var task1 = function (callback) {
         db.put(req.body.user_key, req.body.content, function (err) {
             if (err) {
                 console.log(err);
@@ -22,7 +22,7 @@ router.get('/', function (req, res, next) {
         });
     };
 
-    const task2 = function (callback) {
+    var task2 = function (callback) {
         db.put(req.body.user_key, function (err, value) {
             if (err) {
                 console.log(err);
@@ -32,12 +32,12 @@ router.get('/', function (req, res, next) {
         });
     };
 
-    const task3 = function (callback) {
+    var task3 = function (callback) {
         res.send(json);
         callback(null);
     };
 
-    const tasks = [task1, task2, task3];
+    var tasks = [task1, task2, task3];
 
     async.series(tasks,function (err, results) {
         console.log(results);
