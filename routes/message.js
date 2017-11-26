@@ -9,7 +9,7 @@ var dbPath = path.join(__dirname, 'mydb');
 var db = level(dbPath);
 
 router.post('/', function (req, res, next) {
-    var userMessage = userMessage;
+    var userMessage = req.body;
     console.log(userMessage);
 
     var task1 = function (callback) {
