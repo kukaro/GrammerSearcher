@@ -1,2 +1,8 @@
+#ide manifests
 .idea
+
+#npm bin
 node_modules
+
+#private db
+routes/mydb
