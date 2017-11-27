@@ -10,18 +10,36 @@ var db = level(dbPath);
 router.get('/', function (req, res, next) {
     var data;
 
+    const task1 = function (callback) {
         db.put('ThisIsKey', 'ThisIsValue', function (err) {
-            if(err) {
+            if (err) {
                 console.log(err);
             }
-            db.get('ThisIsKey', function (err, value) {
-                if (err) {
-                    console.log(err);
-                }
-                console.log(value);
-                res.send(value);
-            });
+            console.log('task1');
+            callback(null);
         });
+    };
+
+    const task2 = function (callback) {
+        db.get('ThisIsKey', function (err, value) {
+            if (err) {
+                console.log(err);
+            }
+            data = value;
+            console.log('task2');
+            callback(null);
+        });
+    };
+
+    const task3 = function (callback) {
+        res.send(data);
+        console.log('task3');
+        callback(null);
+    };
+
+    const tasks = [task1, task2, task3]
+
+    async.series(tasks);
 });
 
 module.exports = router;
