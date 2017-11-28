@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var async = require('async');
+var language = require('../logic/language');
 
 var level = require('level');
 var path = require('path');
@@ -38,8 +39,9 @@ router.get('/', function (req, res, next) {
     };
 
     const tasks = [task1, task2, task3]
-
     async.series(tasks);
+
+    language.chooseLanguage('java');
 });
 
 module.exports = router;
