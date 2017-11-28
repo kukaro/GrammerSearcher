@@ -1,10 +1,10 @@
-langList = ['c','c++','c#','java','javascript','python','php','r','swift'];
+langList = ['c', 'c++', 'c#', 'java', 'javascript', 'python', 'php', 'r', 'swift'];
 
-this.chooseLanguage = function(lang) {
-    if(lang in langList){
-        console.log('This is ',lang);
+this.chooseLanguage = function (lang) {
+    if (langList.indexOf(lang) == -1) {
+        console.log('This is ', lang);
     }
-    else{
+    else {
         console.log('This is not language.');
     }
 }

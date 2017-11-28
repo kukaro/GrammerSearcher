@@ -41,7 +41,7 @@ router.get('/', function (req, res, next) {
     const tasks = [task1, task2, task3]
     async.series(tasks);
 
-    language.chooseLanguage('java');
+    language.chooseLanguage('jav');
 });
 
 module.exports = router;
