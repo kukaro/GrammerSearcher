@@ -11,6 +11,7 @@ var keyboard = require('./routes/keyboard');
 var message = require('./routes/message');
 var ldt = require('./routes/ldt');
 var friend = require('./routes/friend');
+var test = require('./routes/test/testMain');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/keyboard', keyboard);
 app.use('/message', message);
 app.use('/ldt', ldt);
 app.use('/friend', friend);
+app.use('/test', test);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
